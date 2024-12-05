@@ -13,12 +13,10 @@ export class ProductListComponent {
   constructor(private productsService: ProductService, private router: Router){}
     
     ngOnInit(){
-      //Cargamos los productos
       this.getProducts();
     }
 
     private getProducts(){
-      //Consumimos los datos del observable
       this.productsService.getProductsList().subscribe(
         (data=>{
           this.products = data;
